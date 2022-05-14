@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cat collector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <nav>
+     <div class="nav-wrapper teal lighten-2">
+      <a href="/cats/" class="brand-logo right">cat collector</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        {% if user.is_authenticated %}
+          <li><a href="/cats/create">Add a Cat!</a></li>
+          <li><a href="/cattoys/create">Add a Cat Toy!</a></li>
+          <li><a href="/cattoys">View All Cat Toys!</a></li>
+          <li><a href="/user/{{user.username}}">Profile</a></li>
+          <li><a href="/logout">Log Out</a></li>
+        {% else %}
+          <li><a href="/login">Log In</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        {% endif %}
+      </ul>
+     </div>
+    </nav>
+    </a>
+
+    <main class="container">
+      {% block content %}      
+      {% endblock %}
+    </main>
+
+    <footer class="page-footer">
+      <div class="container col s6 right-align">
+        All Rights Reserved, catcollector 2022
+      </div>
+    </footer>
+  </body>
+</html>
+

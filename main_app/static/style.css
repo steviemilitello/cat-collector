@@ -1,0 +1,23 @@
+
+h1, h4 {
+    color: turquoise;
+}
+
+body {
+    background-color: lightslategrey;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+label {
+    color: whitesmoke;
+}
+
+footer {
+    margin: 10px;
+}
